@@ -44,15 +44,16 @@ public:
     }
     
      ListNode* reverseList(ListNode* head){
-           /*  if(head==NULL) return NULL;
+           if(head==NULL) return NULL;
         ListNode* d=NULL;
         while(head!= NULL){
             ListNode* next=head->next;
             head->next=d;
+            d=head;
             head=next;
         }
-        return d;*/
-           if(head==NULL) return NULL;
+        return d;
+           /*if(head==NULL) return NULL;
         ListNode* newhead = NULL;
         while(head!=NULL){
             ListNode* next= head->next;
@@ -60,7 +61,7 @@ public:
             newhead = head;
             head = next;
         }
-        return newhead;
+        return newhead;*/
     }
     
 
