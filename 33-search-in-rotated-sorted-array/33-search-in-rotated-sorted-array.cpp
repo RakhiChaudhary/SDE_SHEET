@@ -45,7 +45,7 @@ public:
         
         return ans;*/
         
-     /* int start=0;
+    /* int start=0;
         int end=nums.size()-1;
         
         while(start<=end){
@@ -69,29 +69,29 @@ public:
                     end=mid-1;
             }
         }
-        return -1;*/
-        
+        return -1;
+    */    
                 
         
-  int low = 0, high = nums.size() - 1; //<---step 1
+ int low = 0, high = nums.size() - 1; 
 
-  while (low <= high) { //<--- step 2
-    int mid = (low + high) >> 1; //<----step 3
+  while (low <= high) { 
+    int mid = (low + high) >> 1; 
     if (nums[mid] == target)
-      return mid; // <---step 4
+      return mid; 
 
-    if (nums[low] <= nums[mid]) { //<---step 5
+    if (nums[low] <= nums[mid]) { 
       if (nums[low] <= target && nums[mid] >= target)
-        high = mid - 1; //<---step 6 
+        high = mid - 1; 
       else
-        low = mid + 1; //<---step 7
-    } else { //<---step 7
+        low = mid + 1; 
+    } else {
       if (nums[mid] <= target && target <= nums[high])
         low = mid + 1;
       else
         high = mid - 1;
     }
   }
-  return -1; //<--
+  return -1; 
     }
 };
