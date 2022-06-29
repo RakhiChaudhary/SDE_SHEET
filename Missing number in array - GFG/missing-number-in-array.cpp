@@ -14,19 +14,23 @@ class Solution{
   public:
     int MissingNumber(vector<int>& array, int n) {
         // Your code goes here
-       /* vector<int>v(n,0);
-        
+       vector<int>v(n+1,0);
+       int res=0; 
         for(int i=0;i<n-1;i++){
             int index=array[i];
             v[index]=1;
         }
         
-        for(int i=0;i<=n;i++){
+        for(int  i=0;i<=n;i++){
             if(v[i]==0&&i!=0)
-            return i;
+            {
+            res=i;
+            break;
+            }
+            
         }
-        return -1;*/
-         int sum=0;
+        return res;
+         /*int sum=0;
          for(int i=0;i<n-1;i++){
              sum=sum+array[i];
          }
@@ -34,7 +38,7 @@ class Solution{
          int r=0;
          r=(n*(n+1)/2)-sum;
          
-         return r;
+         return r;*/
         
     }
 };
