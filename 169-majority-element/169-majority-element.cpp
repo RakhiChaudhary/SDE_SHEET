@@ -1,7 +1,7 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-               int count =0;
+         /*      int count =0;
         int element =0;
         for(int i=0;i<nums.size();i++)
         {
@@ -12,6 +12,15 @@ public:
             else 
                 count -=1;
         }
-        return element;
+        return element;*/
+        
+        map<int,int>m;
+int max ;
+for (int i=0;i<nums.size();i++){
+++m[nums[i]];
+if(m[nums[i]]>nums.size()/2)
+max=nums[i];
+}
+return max;
     }
 };
