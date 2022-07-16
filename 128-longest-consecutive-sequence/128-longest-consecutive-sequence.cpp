@@ -17,7 +17,7 @@ public:
            
         }
         return count;*/
-         if(nums.size() == 0 ){
+         /*if(nums.size() == 0 ){
             return 0;
         }
         
@@ -38,6 +38,30 @@ public:
             ans = max(ans, cur);
         }
         return ans;
+        */
         
+        set<int>s;
+        
+        for(int num:nums){
+           s.insert(num);
+        }
+        
+        int ans=0;
+       
+        for(int num:nums){
+            if(!s.count(num-1)){
+                int curnum=num;
+                int curstreak=1;
+                
+                while(s.count(curnum+1)){
+                    curnum+=1;
+                    curstreak+=1;
+                }
+                 ans=max(ans,curstreak);
+            }
+            
+           
+        }
+        return ans;
     }
 };
