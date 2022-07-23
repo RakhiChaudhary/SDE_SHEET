@@ -21,7 +21,7 @@ public:
         if(node==NULL)
             return 0;
         int lh=height(node->left);
-            if(lh==-1)
+          if(lh==-1)
                 return -1;
         int rh=height(node->right);
            if(rh==-1)
