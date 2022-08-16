@@ -30,9 +30,9 @@ public:
                 
                 if(nums[start]-nums[i]==diff and nums[end]-nums[start]==diff)
                 {
-                    start++;
-                    end--;
+                    
                     ans++;
+                    break;
                 } 
                 
                if((nums[start]-nums[i])<diff) 
