@@ -1,25 +1,50 @@
 class Solution {
 public:
-    vector<int> maxSlidingWindow(vector<int>& v, int k) {
-       /* deque<int>d;
-        vector<int>ans;
+    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+            deque<int>dq;
+    vector<int>ans;
+    
+    int i=0;
+    int j=0;
+    
+    while(j<nums.size())
+        {
         
-        for(int i=0;i<nums.size();i++){
-            while(!d.empty() && d.front()==i-k)
-                d.pop_front();
-            while(!d.empty() && nums[d.back()]<=nums[i])
-                d.pop_back();
-            d.push_back(i);
-            if(i>=k-1)
-               ans.push_back(nums[d.front()]);
+         if(dq.empty()){ 
+            dq.push_back(nums[j]);   
         }
-        return ans;*/
+       else
+            {
+            while(!dq.empty() && dq.back()<nums[j])
+                {
+                dq.pop_back();
+                 }   
+           dq.push_back(nums[j]);
+             }
         
-        int n=v.size();
+        
+        if(j-i+1<k)
+        {
+            j++;
+        }
+        
+        else if(j-i+1==k)
+        {
+            ans.push_back(dq.front());
+            
+            if(nums[i]==dq.front())
+            {
+                dq.pop_front();
+            }
+            i++;
+            j++;
+        }
+    }
+    return ans;
+       /*nt n=v.size();
         vector<int>ans;
-		deque<int>q;   //we created a simple "Deque"  it help us to add and remove the element from 
-		                // front as well ass back
-		for(int i=0;i<k;i++)     //In this loop I created a initial window
+		deque<int>q;   
+		for(int i=0;i<k;i++)     
         {
             while(!q.empty()&&q.back()<v[i])    
 			
@@ -50,7 +75,28 @@ public:
             j++;
             i++;
         }
+        return ans;*/
+      /*    vector<int>ans;
+		deque<int>q;   
+        int n=v.size();
+        int i=0;int j=0;
+        while(j<n){
+             while(!q.empty()&&q.back()<v[i])    
+			
+            {
+                q.pop_back();;
+            }
+            q.push_back(v[i]);
+            
+            if(j-i+1<k){
+                j++;
+            }
+            
+            else if(j-i+1==k){
+                ans.push_back(q.front());
+            }
+        }
         return ans;
-           
+           */
     }
 };
